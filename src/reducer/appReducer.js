@@ -19,6 +19,12 @@ const reducer = (state = initialState, action) => {
             }
         }
       
+        case actions.SET_PASSWORD :{
+            return{
+                ...state,
+                valuepswd:action.payload
+            }
+        }
 
         default: {
             return state;

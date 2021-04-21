@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import useGlobalState from '../../../Context';
 import Spinner from 'react-spinner-material';
 import { showAlert,  showSuccess } from '../../../Common/CommonAlert';
+import {setPassword } from '../../../reducer/action'
 import "../../../css/main.css";
 import "../../../css/react-confirm-alert.css";
 import "../Css/User.css";
@@ -11,16 +12,19 @@ import Navigation from '../../Navigation/View/Navigation';
 
 const User = () => {
     const [loading, setLoading] = useState(false)
-    const [passwords, setPasswords] = useState("")//P@ssw0rd
+    const [passwords, setPasswords] = useState()//P@ssw0rd
     const [passwordValue, setPasswordValue] = useState(false)
     const history = useHistory()
-    const [{ loginName },] = useGlobalState();
+    const [{ loginName,valuepswd },dispatch] = useGlobalState();
 
 
-
+    useEffect(()=>{
+        setPasswords(valuepswd)
+    },[])
 
     const onChangePassword = (e) => {
         setPasswords(e.target.value)
+        dispatch(setPassword(passwords))
     }
 
     const handleKeyPress = (target) => {

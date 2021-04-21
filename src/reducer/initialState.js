@@ -1,7 +1,7 @@
 const initialState = {
 
     userName:'',
-    password:'',
+    valuepswd:'',
     isAuthenticated: false,
     loginName:'',
    

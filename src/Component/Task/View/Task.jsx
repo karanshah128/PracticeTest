@@ -44,8 +44,8 @@ const Task = () => {
     }
 
     const modalClose = () => {
-        setDesc()
-        setDisplayModal(false)
+       setDesc(" ")
+       setDisplayModal(false)
     }
 
     const newTask =()=>{

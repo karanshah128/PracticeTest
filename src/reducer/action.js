@@ -16,9 +16,15 @@ const setAuth = (payload) => {
     }
 }
 
+const setPassword =(payload)=>{
+    return{
+        type: actions.SET_PASSWORD,
+        payload
+    }
+}
 
 
 export {
-    setLoginName, setAuth
+    setLoginName, setAuth, setPassword
 
 }
